@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PAMApp</string>
+    <string name="fetch_data">Fetch Data Text Here</string>
+</resources>
