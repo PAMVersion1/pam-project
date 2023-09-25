@@ -3,39 +3,24 @@
 
 <mapper namespace="team.chichi.pamback.schedule.ScheduleDAO">
 
-	<!-- Param -->
-    <select id="getSchedule" resultType="team.chichi.pamback.schedule.ScheduleDTO">
-        SELECT * FROM schedule 
-        WHERE s_Num = #{s_Num} 
-        AND u_Id = #{u_Id} 
-        AND c_Phone = #{c_Phone}
-    </select>
-    
-    <!-- DTO -->
-    <select id="getScheduleByS_NumAndUserIdAndPhone" resultType="team.chichi.pamback.schedule.ScheduleDTO">
-        SELECT * FROM schedule 
-        WHERE s_Num = #{s_Num} 
-        AND u_Id = #{u_Id} 
-        AND c_Phone = #{c_Phone}
-    </select>
-    
-
-    <select id="getAllSchedulesByUserAndContact" resultType="team.chichi.pamback.schedule.ScheduleDTO">
-        SELECT * FROM schedule WHERE u_Id = #{u_Id} AND c_Phone = #{c_Phone}
-    </select>
     <select id="getScheduleListByUserId" resultType="team.chichi.pamback.schedule.ScheduleDTO">
        SELECT * FROM schedule WHERE u_Id = #{u_Id}
     </select>
 
     <insert id="insertSchedule" parameterType="team.chichi.pamback.schedule.ScheduleDTO">
-        INSERT INTO schedule (s_Num, u_Id, c_Phone, s_Title, s_Contents, s_Memo, s_Type, s_Place)
-        VALUES (#{s_Num}, #{u_Id}, #{c_Phone}, #{s_Title}, #{s_Contents}, #{s_Memo}, #{s_Type}, #{s_Place})
+        INSERT INTO schedule (s_Num, u_Id, c_Phone, s_Title, s_Date, s_Time, s_Contents, s_Memo, s_Type, s_Place)
+        VALUES (#{s_Num}, #{u_Id}, #{c_Phone}, #{s_Title}, #{s_Date}, #{s_Time}, #{s_Contents}, #{s_Memo}, #{s_Type}, #{s_Place})
     </insert>
 
     <update id="updateSchedule" parameterType="team.chichi.pamback.schedule.ScheduleDTO">
         UPDATE schedule
-        SET s_Title = #{s_Title}, s_Contents = #{s_Contents}, s_Memo = #{s_Memo},
-            s_Type = #{s_Type}, s_Place = #{s_Place}
+        SET s_Title = #{s_Title}, 
+        	s_Contents = #{s_Contents},
+        	s_Date = #{s_Date}, 
+        	s_Time = #{s_Time}, 
+        	s_Memo = #{s_Memo},
+            s_Type = #{s_Type}, 
+            s_Place = #{s_Place}
         WHERE s_Num = #{s_Num} AND u_Id = #{u_Id} AND c_Phone = #{c_Phone}
     </update>
 

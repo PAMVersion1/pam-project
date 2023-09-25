@@ -14,18 +14,12 @@ public class ScheduleServiceImpl implements ScheduleService {
 	@Autowired
     private ScheduleDAO scheduleMapper;
 
+  
 	@Override
-	public ScheduleDTO getSchedule(ScheduleDTO scheduleDTO) {
-		return scheduleMapper.getScheduleByS_NumAndUserIdAndPhone(scheduleDTO);
+	public List<ScheduleDTO> getScheduleListByUserId(String u_Id) {
+		return scheduleMapper.getScheduleListByUserId(u_Id);
 	}
-    
 
-    @Override
-    public List<ScheduleDTO> getAllSchedulesByUserAndContact(String u_Id, String c_Phone) {
-        return scheduleMapper.getAllSchedulesByUserAndContact(u_Id, c_Phone);
-    }
-
-    
     @Override
     public void insertSchedule(ScheduleDTO schedule) {
         scheduleMapper.insertSchedule(schedule);
@@ -42,8 +36,4 @@ public class ScheduleServiceImpl implements ScheduleService {
     }
 
 
-	@Override
-	public List<ScheduleDTO> getScheduleListByUserId(String u_Id) {
-		return scheduleMapper.getScheduleListByUserId(u_Id);
-	}
 }
