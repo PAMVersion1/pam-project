@@ -2,9 +2,6 @@ package team.chichi.pamback.contacts;
 
 import java.util.List;
 
-
-
-
 public interface ContactsService {
 
 	// Create
