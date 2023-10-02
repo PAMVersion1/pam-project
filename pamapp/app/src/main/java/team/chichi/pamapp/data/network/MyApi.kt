@@ -1,8 +1,9 @@
-package team.chichi.pamapp
+package team.chichi.pamapp.data.network
 
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import team.chichi.pamapp.data.db.UserDTO
 
 interface MyApi {
     @GET("users/{u_Id}")

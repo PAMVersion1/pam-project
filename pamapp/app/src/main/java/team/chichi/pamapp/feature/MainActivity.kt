@@ -1,4 +1,4 @@
-package team.chichi.pamapp
+package team.chichi.pamapp.feature
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +14,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 import team.chichi.pamapp.databinding.ActivityMainBinding
 import android.graphics.Typeface
 import androidx.core.content.res.ResourcesCompat
+import team.chichi.pamapp.R
+import team.chichi.pamapp.data.network.MyApi
 
 class MainActivity : AppCompatActivity() {
 
@@ -54,7 +56,9 @@ class MainActivity : AppCompatActivity() {
                             binding.textViewUserUId.setText(userDTO.u_Id)
                             binding.textViewUName.setText(userDTO.u_Name)
 
-                            val font: Typeface? = ResourcesCompat.getFont(this@MainActivity, R.font.cafe24_ssurround_v2_0)
+                            val font: Typeface? = ResourcesCompat.getFont(this@MainActivity,
+                                R.font.cafe24_ssurround_v2_0
+                            )
                             if (font != null) {
                                 binding.textViewUserUId.typeface = font
                                 binding.textViewUName.typeface = font
