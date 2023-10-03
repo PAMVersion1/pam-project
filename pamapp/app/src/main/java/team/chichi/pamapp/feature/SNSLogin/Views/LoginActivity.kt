@@ -1,4 +1,4 @@
-package team.chichi.pamapp.feature.SNSLogin
+package team.chichi.pamapp.feature.SNSLogin.Views
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +16,7 @@ import com.kakao.sdk.user.Constants.TAG
 import com.kakao.sdk.user.UserApiClient
 import team.chichi.pamapp.R
 import team.chichi.pamapp.databinding.ActivityLoginBinding
+import team.chichi.pamapp.feature.SNSLogin.Views.AfterLoginSuccessActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding : ActivityLoginBinding

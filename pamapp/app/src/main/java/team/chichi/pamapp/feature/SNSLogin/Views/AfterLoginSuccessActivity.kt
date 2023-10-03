@@ -1,4 +1,4 @@
-package team.chichi.pamapp.feature.SNSLogin
+package team.chichi.pamapp.feature.SNSLogin.Views
 
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP
@@ -26,7 +26,6 @@ class AfterLoginSuccessActivity : AppCompatActivity() {
                 startActivity(intent.addFlags(FLAG_ACTIVITY_CLEAR_TOP))
             }
         }
-
 
         val kakao_unlink_button = findViewById<Button>(R.id.kakao_logout_button)
         kakao_unlink_button.setOnClickListener {
