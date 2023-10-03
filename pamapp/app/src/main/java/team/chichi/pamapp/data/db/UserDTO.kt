@@ -1,4 +1,4 @@
-package team.chichi.pamapp
+package team.chichi.pamapp.data.db
 
 import com.google.gson.annotations.SerializedName
 import lombok.Getter
