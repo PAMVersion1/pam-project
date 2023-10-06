@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="team.chichi.pamapp" >
+    package="team.chichi.pamapp">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:name=".global.GlobalApplication"
@@ -15,12 +16,19 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PAMApp" >
+        android:theme="@style/Theme.PAMApp">
+        <activity
+            android:name=".feature.Contacts.ContactsCollectionAndRecyclerViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".feature.listviewtest.ListViewActivity"
+            android:exported="true" />
         <activity
             android:name=".feature.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -28,7 +36,7 @@
             android:name=".feature.CollectData.CallCollectionActivity"
             android:exported="true" />
         <activity
-            android:name=".feature.SNSLogin.Views.AfterLoginSuccessActivity"
+            android:name=".feature.SNSLogin.Views.AfterLoginBeforeLogoutUnlinkActivity"
             android:exported="true" />
         <activity
             android:name=".feature.SNSLogin.Views.LoginActivity"
@@ -36,7 +44,7 @@
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true"
-            android:launchMode="singleTask" >
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -46,7 +54,7 @@
                 <!-- Redirect URI: "kakao{NATIVE_APP_KEY}://oauth" -->
                 <data
                     android:host="oauth"
-                    android:scheme="@string/Kakao_redirection_scheme" />
+                    android:scheme="kakao${NATIVE_APP_KEY}" />
             </intent-filter>
         </activity>
     </application>

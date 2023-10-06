@@ -9,7 +9,7 @@ import android.widget.Toast
 import com.kakao.sdk.user.UserApiClient
 import team.chichi.pamapp.R
 
-class AfterLoginSuccessActivity : AppCompatActivity() {
+class AfterLoginBeforeLogoutUnlinkActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_after_login_success)
