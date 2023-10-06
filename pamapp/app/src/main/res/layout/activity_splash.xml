@@ -4,21 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feature.SNSLogin.Views.LoginActivity">
+    tools:context=".feature.SplashActivity">
 
-    <ImageButton
-        android:id="@+id/kakao_login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="43dp"
-        android:layout_marginTop="374dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="293dp"
-        android:src="@drawable/kakao_login_medium_wide"
-        android:background="@android:color/transparent"
+    <ImageView
+        android:layout_width="359dp"
+        android:layout_height="352dp"
+        android:background="@drawable/splash_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"></ImageView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
