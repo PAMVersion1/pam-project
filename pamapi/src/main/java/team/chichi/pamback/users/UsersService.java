@@ -22,5 +22,8 @@ public interface UsersService {
 	    
 	    //DTO
 	    void deleteUserDTO(UsersDTO user);
+
+		//추가
+		boolean getInfo(UsersDTO user);
 	    
 }

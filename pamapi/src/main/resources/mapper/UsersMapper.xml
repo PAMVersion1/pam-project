@@ -44,4 +44,9 @@
         DELETE FROM user WHERE u_Id = #{u_Id}
     </delete>
 
+    <!--추가-->
+    <select id="getInfo" parameterType="team.chichi.pamback.users.UsersDAO" resultType="team.chichi.pamback.users.UsersDAO">
+  	   SELECT * FROM member WHERE u_Id = #{u_Id} and u_Pw = #{u_Pw}
+    </select>
+
 </mapper>

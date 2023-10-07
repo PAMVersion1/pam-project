@@ -27,4 +27,7 @@ public interface UsersDAO {
     
     //DTO
     void deleteUserDTO(UsersDTO user);
+
+    //추가
+    UsersDTO getInfo(UsersDTO user);
 }
