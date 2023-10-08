@@ -43,4 +43,17 @@ public class UsersServiceImpl implements UsersService {
 		usersMapper.deleteUserDTO(user);
 		
 	}
+
+    //추가
+    @Override
+    public boolean getInfo(UsersDTO user) {
+    	boolean isOk = false;
+        if(usersMapper.getInfo(user)!=null) {
+            isOk = true;
+        } else {
+            isOk = false;
+        }
+        return isOk;
+
+    }
 }

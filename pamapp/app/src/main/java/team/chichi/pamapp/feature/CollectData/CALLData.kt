@@ -8,7 +8,7 @@ data class CALLData(
     val call_Id: Long,
     val u_Id: String,
     val c_Phone: String,
-    val call_Type: Int,
+    val call_Type: String, // Type은 전부 String 으로
     val call_Time: Timestamp,
     val call_Duration: String,
 ) {

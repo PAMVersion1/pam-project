@@ -21,9 +21,6 @@ public class ReferenceController{
     }
 
     //Controller에 @ResponseBody를 붙여서 REST API로 MySQL DB에 있는 call history 테이블에서 연락 유형(sorting_Callhistory), 연락량(c_time) 데이터를 가져와서 데이터를 service 클래스에서 계산하고 나온 값을 반환값으로 하여, 처리된 데이터를 DB에 저장하는 코드를 만들고 싶어요.
-
     
-    
-
 
 }

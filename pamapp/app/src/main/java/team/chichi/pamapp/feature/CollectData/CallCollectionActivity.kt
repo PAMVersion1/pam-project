@@ -77,13 +77,13 @@ class CallCollectionActivity : AppCompatActivity() {
         do {
             callBuff.append(c.getString(0)) // CallLog.Calls._ID // call_Id
 
-            callBuff.append(c.getString(1))
+            callBuff.append(c.getString(1)) // u_Id
 
             callBuff.append(c.getString(2)) // CallLog.Calls.NUMBER // c_Phone
 
             when (c.getInt(3)) { // CallLog.Calls.TYPE // call_Type
-                CallLog.Calls.INCOMING_TYPE -> callBuff.append(0) // 0
-                CallLog.Calls.OUTGOING_TYPE -> callBuff.append(1) // 1
+                CallLog.Calls.INCOMING_TYPE -> callBuff.append("수신(incoming)")
+                CallLog.Calls.OUTGOING_TYPE -> callBuff.append("발신(outgoing)")
                 CallLog.Calls.MISSED_TYPE -> callBuff.append("부재중") // 미사용
                 CallLog.Calls.REJECTED_TYPE -> callBuff.append("종료") // 미사용
             }
@@ -109,7 +109,7 @@ class CallCollectionActivity : AppCompatActivity() {
                 call_Id = tokens[0].toLong(),
                 u_Id = tokens[1],
                 c_Phone = tokens[2],
-                call_Type = tokens[3].toInt(),
+                call_Type = tokens[3],
                 call_Time = Timestamp.valueOf(tokens[4]),
                 call_Duration = tokens[5],
             )
@@ -117,8 +117,15 @@ class CallCollectionActivity : AppCompatActivity() {
         }
 
 
-        sendCallDataToServer(callList)
+        //sendCallDataToServer(callList)
+        calllogtest(callList)
 
+    }
+
+    private fun calllogtest(callList: MutableList<CALLData>) {
+        for (data in callList){
+            Log.d("TAG", data.toString())
+        }
     }
 
 
