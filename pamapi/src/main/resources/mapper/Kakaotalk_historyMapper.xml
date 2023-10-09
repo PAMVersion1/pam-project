@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="team.chichi.pamback.contacts.Kakaotalk_historyDAO">
+
+    <!-- Insert -->
+	<insert id="insertKakaotalk_history" parameterType="team.chichi.pamback.contacts.Kakaotalk_historyDTO">
+	    INSERT INTO kakaotalk_history (kakaotalk_Seq, u_Id, c_Phone, kakaotalk_Type, kakaotalk_Contents, kakaotalk_Time)
+	    VALUES (#{kakaotalk_Seq}, #{u_Id}, #{c_Phone}, #{kakaotalk_Type}, #{kakaotalk_Contents}, #{kakaotalk_Time})
+	</insert>
+
+    <!-- Select -->
+    <select id="getKakaotalk_historyByUserId" parameterType="String" resultType="team.chichi.pamback.contacts.Kakaotalk_historyDTO">
+        SELECT * FROM kakaotalk_history WHERE u_Id = #{u_Id}
+    </select>
+
+    <select id="getKakaotalk_historyByPhoneAndUserId" parameterType="map" resultType="team.chichi.pamback.contacts.Kakaotalk_historyDTO">
+        SELECT * FROM kakaotalk_history WHERE c_Phone = #{c_Phone} AND u_Id = #{u_Id}
+    </select>
+
+    <!-- Update -->
+    <update id="updateKakaotalk_history" parameterType="team.chichi.pamback.contacts.Kakaotalk_historyDTO">
+	    UPDATE kakaotalk_history
+	    SET kakaotalk_Type = #{kakaotalk_Type},
+	        kakaotalk_Contents = #{kakaotalk_Contents},
+	        kakaotalk_Time = #{kakaotalk_Time}
+	    WHERE kakaotalk_Seq = #{kakaotalk_Seq}
+	         AND c_Phone = #{c_Phone} 
+	         AND u_Id = #{u_Id}
+	    </update>
+
+    <!-- Delete -->
+    <delete id="deleteKakaotalk_history" parameterType="team.chichi.pamback.contacts.Kakaotalk_historyDTO">
+        DELETE FROM kakaotalk_history
+        WHERE kakaotalk_Seq = #{kakaotalk_Seq}
+	        AND c_Phone = #{c_Phone} 
+	        AND u_Id = #{u_Id}
+    </delete>
+
+</mapper>
