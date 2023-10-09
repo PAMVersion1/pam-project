@@ -17,6 +17,9 @@ public interface UsersDAO {
     UsersDTO getUserById(@Param("u_Id") String u_Id);
     List<UsersDTO> getAllUsers();
 
+    // Read add u_Name
+    UsersDTO getNameById(@Param("u_Id") String u_Id);
+
     
     //Update
     void updateUser(UsersDTO user);
@@ -30,4 +33,9 @@ public interface UsersDAO {
 
     //추가
     UsersDTO getInfo(UsersDTO user);
+
+    static int idCheck(String u_Id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'idCheck'");
+    }
 }

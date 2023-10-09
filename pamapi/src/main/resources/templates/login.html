@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body class>
+    <div class="box">
+        <section class="Login-section">
+            
+            <img src="../static/img/icon.png" alt="IconImage">
+            <!--form Start-->
+            <form class="login-form" action="/contacts" method="post">
+                <div class="input-box">
+                    <input name="u_Id" id="inputId" class="input-default" placeholder="아이디">
+                </div>
+                <div class="input-box">
+                    <input name="u_Pw" id="inputPw" type="password" class="input-default" placeholder="비밀번호" style="color: #37557a;">
+                </div>
+
+                <div class="login-box">
+                <div class="login-button1">
+                    <input id="loginBtn" type="submit" value="로그인" style="color: #547fb2; border-radius: 5px;">
+                </div>
+                <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=8712a0471d6192c911986751a109177c&scope=profile_nickname%20profile_image%20account_email%20friends&state=4_ZxYMATEN6M1cOyDieZT7tGMQoBSeo9PGXGnkTBh18%3D&redirect_uri=https://pambackend-pamapi.azuremicroservices.io/oauth/kakao/callback"><img src="../static/img/kakao_login_medium_narrow.png" style="width: 240px; height: 54px;"></a>
+                </div>
+
+            </form>
+        </section>
+    </div>  
+    <script src="../static/js/login.js" defer></script>
+
+    <!---로그인 실패 시-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            var msg = "${msg}";
+            if (msg != "" && msg == "로그인 실패") {
+                alert(msg);
+            }else {
+            }
+        })
+    </script>
+</body>
+</html>

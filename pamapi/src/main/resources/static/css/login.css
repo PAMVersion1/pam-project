@@ -1,48 +1,76 @@
-  .Login-section {
-    text-align: center;
-    margin: auto;
-    margin-top: 30px;
-    border: 7px solid none;
-    border-radius: 15px;
-    width: 360px;
-    height: 500px;
-    padding: 30px 25px;
-    background: padding-box rgb(186, 253, 235);
+.Login-section {
+  text-align: center;
+  margin: auto;
+  margin-top: 30px;
+  border: 7px solid none;
+  border-radius: 15px;
+  width: 360px;
+  height: 600px;
+  padding: 30px 25px;
+  background: padding-box #c4dfff;
+}
+
+#logo {
+  text-align: center;
+}
+
+.input-box {
+  text-align: center;
+  border: 3px solid none;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 1.9em;
+}
+
+.input-default {
+  color: #9e9e9e;
+  box-sizing: border-box;
+  font-weight: 400;
+  border: none;
+  letter-spacing: 0.06em;
+}
+
+
+
+#inputId {
+  border: 3px solid none;
+  border-radius: 3px;
+  margin: 10px 20px 10px 30px;
+  padding: 15px 3px 15px 3px;
+  width: 240px;
+}
+
+#inputPw {
+  border: 3px solid none;
+  border-radius: 3px;
+  margin: 5px 20px 20px 30px;
+  padding: 15px 3px 15px 3px;
+  width: 240px;
+}
+
+#loginBtn {
+  margin: 20px 0 10px 0;
+  font-size: 22px;
+  width: 240px;
+  background-color: #ffffff;
+  border: none;
+  height: 50px;
+}
+@font-face {
+  font-family: 'Cafe24Ssurround';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+    font-family: 'Cafe24Ssurround', sans-serif;
   }
-  
-  #logo {
-    text-align: center;
-  }
-  
-  .input-box {
-    text-align: center;
-    border: 3px solid none;
-    border-radius: 3px;
-    padding: 10px;
-  }
-  
-  .input-default {
-    color: #222;
-    box-sizing: border-box;
-    font-weight: 400;
-  }
-  
-  #inputId {
-    border: 3px solid none;
-    border-radius: 3px;
-    margin: 10px 20px 10px 30px;
-    padding: 15px 3px 15px 3px;
-  }
-  
-  #inputPw {
-    border: 3px solid none;
-    border-radius: 3px;
-    margin: 5px 20px 20px 30px;
-    padding: 15px 3px 15px 3px;
-  }
-  
-  #loginBtn {
-    margin: 20px 0 10px 0;
-    font-size: 22px;
-    width: 240px;
-  }
+
+img{
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+}
