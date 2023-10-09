@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class sms_historyController {
+public class Sms_historyController {
     //@Autowired
-    private sms_historyService sms_historyService;
+    private Sms_historyService sms_historyService;
 
     @PostMapping("/history/sms")
-    public void addSmsHistoryList(@RequestBody List<sms_historyDTO> smsHistoryDataList) {
-        sms_historyService.addSmsHistoryList(smsHistoryDataList);
+    public void addSmsHistoryList(@RequestBody List<Sms_historyDTO> smsHistoryDataList) {
+        
     }
 }
