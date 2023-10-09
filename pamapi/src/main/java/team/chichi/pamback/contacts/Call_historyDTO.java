@@ -1,6 +1,5 @@
 package team.chichi.pamback.contacts;
 
-import java.math.BigInteger;
 import java.sql.Timestamp;
 
 import lombok.Data;
@@ -9,7 +8,7 @@ import lombok.Data;
 public class Call_historyDTO {
 
 	private int call_Seq;
-	private BigInteger call_Id;
+	private int call_Id;
 	private String u_Id;
 	private String c_Phone;
 	private String call_Type;
