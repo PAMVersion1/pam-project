@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="team.chichi.pamback.contacts.Call_historyDAO">
+
+    <!-- Insert -->
+    <insert id="insertCall_history" parameterType="team.chichi.pamback.contacts.Call_historyDTO">
+        INSERT INTO CALL_HISTORY (call_Seq, call_Id, u_Id, c_Phone, call_Type, call_Time, call_Duration)
+        VALUES (#{call_Seq}, #{call_Id}, #{u_Id}, #{c_Phone}, #{call_Type}, #{call_Time}, #{call_Duration})
+    </insert>
+
+    <!-- Select -->
+    <select id="getCall_historyByUserId" parameterType="String" resultType="team.chichi.pamback.contacts.Call_historyDTO">
+        SELECT * FROM CALL_HISTORY WHERE u_Id = #{u_Id}
+    </select>
+
+    <select id="getCall_historyByPhoneAndUserId" parameterType="map" resultType="team.chichi.pamback.contacts.Call_historyDTO">
+        SELECT * FROM CALL_HISTORY WHERE c_Phone = #{c_Phone} AND u_Id = #{u_Id}
+    </select>
+
+    <!-- Update -->
+    <update id="updateCall_history" parameterType="team.chichi.pamback.contacts.Call_historyDTO">
+	    UPDATE CALL_HISTORY
+	    SET call_Type = #{call_Type},
+	        call_Time = #{call_Time},
+	        call_Duration = #{call_Duration}
+	    WHERE call_Seq = #{call_Seq}
+	         AND c_Phone = #{c_Phone} 
+	         AND u_Id = #{u_Id}
+	    </update>
+
+    <!-- Delete -->
+    <delete id="deleteCall_history" parameterType="java.util.Map">
+        DELETE FROM CALL_HISTORY 
+        WHERE call_Seq = #{call_Seq}
+        	AND call_Id = #{call_Id}
+	        AND c_Phone = #{c_Phone} 
+	        AND u_Id = #{u_Id}
+    </delete>
+
+</mapper>
