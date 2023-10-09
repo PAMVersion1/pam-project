@@ -13,6 +13,9 @@ public interface UsersService {
 	    UsersDTO getUserById(@Param("u_Id") String u_Id);
 	    List<UsersDTO> getAllUsers();
 
+		// Read add u_Name
+		UsersDTO getNameById(@Param("u_Id") String u_Id);
+
 	    //Update
 	    void updateUser(UsersDTO user);
 
@@ -25,5 +28,7 @@ public interface UsersService {
 
 		//추가
 		boolean getInfo(UsersDTO user);
+
+		boolean idCheck(String u_Id);
 	    
 }
