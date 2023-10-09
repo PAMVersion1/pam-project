@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="team.chichi.pamback.contacts.Sms_historyDAO">
+
+    <!-- Insert -->
+	<insert id="insertSms_history" parameterType="team.chichi.pamback.contacts.Sms_historyDTO">
+	    INSERT INTO SMS_HISTORY (sms_Seq, sms_Id, u_Id, c_Phone, sms_Type, sms_Contents, sms_Time)
+	    VALUES (#{sms_Seq}, #{sms_Id}, #{u_Id}, #{c_Phone}, #{sms_Type}, #{sms_Contents}, #{sms_Time})
+	</insert>
+
+    <!-- Select -->
+    <select id="getSms_historyByUserId" parameterType="String" resultType="team.chichi.pamback.contacts.Sms_historyDTO">
+        SELECT * FROM SMS_HISTORY WHERE u_Id = #{u_Id}
+    </select>
+
+    <select id="getSms_historyByPhoneAndUserId" parameterType="map" resultType="team.chichi.pamback.contacts.Sms_historyDTO">
+        SELECT * FROM SMS_HISTORY WHERE c_Phone = #{c_Phone} AND u_Id = #{u_Id}
+    </select>
+
+    <!-- Update -->
+    <update id="updateSms_history" parameterType="team.chichi.pamback.contacts.Sms_historyDTO">
+	    UPDATE SMS_HISTORY
+	    SET sms_Type = #{sms_Type},
+	        sms_Contents = #{sms_Contents},
+	        sms_Time = #{sms_Time}
+	    WHERE sms_Seq = #{sms_Seq}
+	         AND c_Phone = #{c_Phone} 
+	         AND u_Id = #{u_Id}
+	    </update>
+
+    <!-- Delete -->
+    <delete id="deleteSms_history" parameterType="com.example.test.sms_history.Sms_historyDTO">
+        DELETE FROM SMS_HISTORY 
+        WHERE sms_Seq = #{sms_Seq}
+        	AND sms_Id = #{sms_Id}
+	        AND c_Phone = #{c_Phone} 
+	        AND u_Id = #{u_Id}
+    </delete>
+
+</mapper>
