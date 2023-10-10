@@ -30,7 +30,7 @@
 	    </update>
 
     <!-- Delete -->
-    <delete id="deleteSms_history" parameterType="com.example.test.sms_history.Sms_historyDTO">
+    <delete id="deleteSms_history" parameterType="team.chichi.pamback.contacts.Sms_historyDTO">
         DELETE FROM SMS_HISTORY 
         WHERE sms_Seq = #{sms_Seq}
         	AND sms_Id = #{sms_Id}
