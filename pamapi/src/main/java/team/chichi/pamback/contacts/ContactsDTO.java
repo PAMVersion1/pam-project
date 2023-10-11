@@ -12,5 +12,6 @@ public class ContactsDTO {
 	private String c_Name;
 	private String c_Address;
 	private String c_Email;
-	private String c_Memo;    
+	private String c_Memo;
+	private byte[] c_Img;
 }
