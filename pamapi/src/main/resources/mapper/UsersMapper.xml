@@ -8,10 +8,12 @@
         <result property="u_Pw" column="u_Pw" />
         <result property="u_Name" column="u_Name" />
         <result property="u_Phone" column="u_Phone" />
+        <result property="u_Birth" column="u_Birth" />
         <result property="u_Email" column="u_Email" />
         <result property="u_Address" column="u_Address" />
         <result property="u_DetailAdd" column="u_DetailAdd" />
         <result property="u_ExtraAdd" column="u_ExtraAdd" />
+        <result property="u_Profile" column="u_Profile" />
     </resultMap>
 
     <select id="getUserById" parameterType="java.lang.String" resultMap="UserResultMap">
@@ -23,14 +25,21 @@
     </select>
 
     <insert id="insertUser" parameterType="team.chichi.pamback.users.UsersDTO">
-        INSERT INTO user (u_Id, u_Pw, u_Name, u_Phone, u_Email, u_Address, u_DetailAdd, u_ExtraAdd)
-        VALUES (#{u_Id}, #{u_Pw}, #{u_Name}, #{u_Phone}, #{u_Email}, #{u_Address}, #{u_DetailAdd}, #{u_ExtraAdd})
+        INSERT INTO user (u_Id, u_Pw, u_Name, u_Phone, u_Birth, u_Email, u_Address, u_DetailAdd, u_ExtraAdd, u_Profile)
+        VALUES (#{u_Id}, #{u_Pw}, #{u_Name}, #{u_Phone}, #{u_Birth}, #{u_Email}, #{u_Address}, #{u_DetailAdd}, #{u_ExtraAdd}, #{u_Profile})
     </insert>
 
     <update id="updateUser" parameterType="team.chichi.pamback.users.UsersDTO">
         UPDATE user
-        SET u_Pw = #{u_Pw}, u_Name = #{u_Name}, u_Phone = #{u_Phone}, 
-            u_Email = #{u_Email}, u_Address = #{u_Address}, u_DetailAdd = #{u_DetailAdd}, u_ExtraAdd = #{u_ExtraAdd}
+        SET u_Pw = #{u_Pw}, 
+        u_Name = #{u_Name}, 
+        u_Phone = #{u_Phone}, 
+        u_Birth = #{u_Birth},
+        u_Email = #{u_Email}, 
+        u_Address = #{u_Address}, 
+        u_DetailAdd = #{u_DetailAdd}, 
+        u_ExtraAdd = #{u_ExtraAdd},
+        u_Profile = #{u_Profile}
         WHERE u_Id = #{u_Id}
     </update>
 
