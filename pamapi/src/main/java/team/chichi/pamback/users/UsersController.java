@@ -43,7 +43,7 @@ public class UsersController {
         // 로그인 처리 
         //아이디 패스워드가 맞으면 연락처 목록 화면으로 이동
         //다르면 다시 로그인페이지로
-	    @RequestMapping(value="/contacts",method=RequestMethod.POST)
+	    @RequestMapping(value="/contactsList",method=RequestMethod.POST)
 
 	    public String loginProcess(UsersDTO user, HttpSession session, Model model ) {
 
@@ -75,11 +75,7 @@ public class UsersController {
 		return "redirect:/login";
 		}
 
-		//연락처 목록 화면 인식시키기
-		@RequestMapping(value = "/contactsList", method = RequestMethod.GET)
-    	public String contactsList() {
-        return "contactsList";
-    	}
+		
 
     
 }

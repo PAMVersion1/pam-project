@@ -32,9 +32,9 @@
         <!-- 헤더: 제목, 친구 찾기 버튼, 친구 추가 버튼 -->
         <header>
             <h1>연락처</h1>
-            <span><i class="demo-icon icon-user-add-outline" title="친구 추가">&#xe802;</i></span>
-            <span class="demo-icon icon-search" title="통합검색">&#xe804;</span>
-            <span class="demo-icon icon-cog-outline" title="설정">&#xe81a;</span>
+            <span><i class="demo-icon icon-user-add-outline" title="친구 추가" style="color: #452F6B;">&#xe802;</i></span>
+            <span class="demo-icon icon-search" title="통합검색" style="color: #452F6B;">&#xe804;</span>
+            <span class="demo-icon icon-cog-outline" title="설정" style="color: #452F6B;">&#xe81a;</span>
         </header>
 
         <!-- 메인: 친구창 메인 내용 -->
@@ -47,31 +47,8 @@
                         <img src="../static/img/me.png" alt="나의프로필사진">
                         <form th:action="@{/userDetail}" method="post">
                             <input type="hidden" name="u_Id" th:value="${session.sessionId}" />
-                            <button type="submit" th:text="${sessionName}"></button>
+                            <button type="submit" th:text="${sessionName}" style="color: rgb(0, 0, 0);"></button>
                         </form>
-                    </li>
-                </ul>
-            </div>
-            <!-- 즐겨찾기 프로필 모음-->
-            <div>
-                <div class="profile-title">
-                    <h2>즐겨찾기</h2>
-                </div>
-                <ul>
-                    <li>
-                        <img src="../static/img/friend1.png" alt="친구1프로필사진">
-                        <div class="profile">
-                            <p>친구1</p>
-                            <h2 th:text="${session.sessionId}"></h2>
-                            <p></p>
-                        </div>
-                    </li>
-                    <li>
-                        <img src="../static/img/default.png" alt="친구2프로필사진">
-                        <div class="profile">
-                            <p>친구2</p>
-                            <p>커피를 마시자</p>
-                        </div>
                     </li>
                 </ul>
             </div>
@@ -79,50 +56,57 @@
             <!-- 친구 프로필 모음 -->
             <div>
                 <div class="profile-title">
-                    <h2>친구</h2>
-                    <p>3</p>
+                    <p style="color: #162A2C; font-size: 15px; padding-top: 20px;">'나'에게 중요한 사람, 'WHO'</p>
+                    
+                </div>
+                <div>
+                    <p id="who-guide" style="color: #ff5e5e;"> who 레벨 1 : 빨강 </p>
+                    <p id="who-guide" style="color: #999898;">/</p>
+                    <p id="who-guide" style="color: #d8b800;"> who 레벨 2 : 노랑 </p>
+                    <p id="who-guide" style="color: #999898;">/</p>
+                    <p id="who-guide" style="color: #155591;"> who 레벨 3 : 파랑 </p>
                 </div>
                 <ul>
                     <li>
                         <img src="../static/img/friend1.png" alt="친구1프로필사진">
                         <div class="profile">
                             <p>친구1</p>
-                            <p></p>
+                            <p id="who-level-background-color" style="color: #ff5e5e;">who 레벨 1</p>
                         </div>
                     </li>
                     <li>
                         <img src="../static/img/default.png" alt="친구2프로필사진">
                         <div class="profile">
                             <p>친구2</p>
-                            <p>커피를 마시자</p>
+                            <p id="who-level-background-color" style="color: #d8b800;">who 레벨 2</p>
                         </div>
                     </li>
                     <li>
                         <img src="../static/img/friend2.png" alt="친구3프로필사진">
                         <div class="profile">
                             <p>친구3</p>
-                            <p>준비한 사진이 모두 떨어졌다</p>
+                            <p id="who-level-background-color" style="color: #d8b800;">who 레벨 2</p>
                         </div>
                     </li>
                     <li>
                         <img src="../static/img/default.png" alt="뫄뫄프로필사진">
                         <div class="profile">
                             <p>뫄뫄 부장님</p>
-                            <p>카톡 X 연락 O</p>
+                            <p id="who-level-background-color" style="color: #155591;">who 레벨 3</p>
                         </div>
                     </li>
                     <li>
                         <img src="../static/img/default.png" alt="쀼프로필사진">
                         <div class="profile">
                             <p>쀼사원</p>
-                            <p>제주도 여행 D-94</p>
+                            <p id="who-level-background-color" style="color: #155591;">who 레벨 3</p>
                         </div>
                     </li>
                     <li>
                         <img src="../static/img/default.png" alt="베프프로필사진">
                         <div class="profile">
                             <p>베프</p>
-                            <p>휴... 쓸말이 다 떨어졌는데 뭐라고 써야 줄이 넘어갈까. 줄이 넘어가면 이렇게 구성됨.</p>
+                            <p id="who-level-background-color" style="color: #155591;">who 레벨 3</p>
                         </div>
                     </li>
                 </ul>
