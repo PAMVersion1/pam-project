@@ -1,3 +1,8 @@
+@charset "UTF-8";
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
+/**/
 @font-face {
     font-family: 'Cafe24Ssurround';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
@@ -12,54 +17,42 @@
 /* 카카오톡 메인페이지(친구리스트, 채팅리스트, 설정화면) 스타일만 작성 */
 /* 메인페이지 큰 레이아웃은 grid로 구성함 */
 
-body{
-    margin: 0; /* 페이지의 여유공간 없애버림 */
-}
-
-/* grid container 적용 */
-#content{
-    /* margin-bottom: 150px; */ /*광고 영역 없애버림 */
-    top: 0;
-    left: 0;
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  #content {
     display: grid;
-    grid-template-columns: 5rem 1.25rem auto 1.25rem; /* 각 grid의 width */
-    grid-template-rows: 1.875rem 3.125rem auto 6.25rem; /* 각 grid의 height */
+    grid-template-columns: 0rem 1.25rem auto 1.25rem;
+    grid-template-rows: 1.875rem 3.125rem auto 6.25rem;
     gap: 0;
     align-items: stretch;
-    /* justify-items: stretch; */
     grid-template-areas:
-        "nav  .  setting  . "
-        "nav  .   header  . "
-        "nav  .    main   . "
-        "ad  ad     ad   ad ";
-}
-/* 설정바 위치 고정하기 위한 스타일 지정 */
-.setting_bar{
-    grid-area: setting;
-    position: sticky;
-    top: 0;
-    background-color: white;
-    /* align-self: stretch = 그리드 안에 공간이 생겨서 백그라운드 컬러 적용 불가 */
-}
-.setting_bar > *{
-    line-height: 1.875rem; /* grid row의 첫번째 크기와 동일 */
-    vertical-align: middle;
-    /* 가운데 정렬 목적 */
-}
+      "nav  .  setting  . "
+      "nav  .   header  . "
+      "nav  .    main   . "
+      "ad  ad     ad   ad ";
+    background-color: #ffffff;
+    border: 2px solid black;
+    margin: auto; /* 가운데 정렬 */
+  }
+
 
 /* 헤더 스타일 지정 */
 header{
     grid-area: header;
     position: sticky;
     top: 1.875rem; /* grid row의 첫번째 + gap 크기와 동일*/
-    background-color: white;
 }
 header span{
     /* 검색, 친구 추가 기능 스타일 지정 */
     float: right;
     margin-left: 0.9375rem; /* 16 브라우저 기준 : 15px*/
     font-size: 1.375rem;
-    color: gray;
 }
 header > *{
     line-height: 3.125rem; /* grid row의 두번째 크기와 동일 */
@@ -70,36 +63,7 @@ h1{
     font-size: 1.375rem; /* 16px 브라우저 기준 22px*/
     font-weight: bold;
     display: inline;
-}
-
-/* 네비게이션 스타일 지정 */
-nav{
-    grid-area: nav;
-    background-color: rgb(208, 218, 224);
-    align-self: start;
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content:space-between;
-    height: 100vh; /* 뷰포트(전체 화면)의 전체 100% 차지 */
-}
-.main-menu i, .sub-menu i{
-    display: block;
-    font-size: 1.75rem;
-    color: gray;
-    text-align: center;
-    margin-bottom: 1.25rem; /* 16 브라우저 기준 20px */
-}
-.main-menu{
-    margin-top: 3.125rem;  /* 16 브라우저 기준 50px */
-}
-.sub-menu{
-    margin-bottom: 6.25rem; /* 16 브라우저 기준 100px */
-}
-/* 알림 개수 만들어주기 */
-.main-menu > *:nth-child(2), .main-menu > *:nth-child(3){
-    position: relative;
+    color: 	#000000;
 }
 
 /* 메인 스타일 지정 */
@@ -115,6 +79,9 @@ main{
 ul{
     list-style: none;
     padding-left: 0;
+    color: rgb(0, 0, 0);
+    border: 2px solid #52381b22;
+    border-radius: 20px;
     /* unordered list 기본 스타일 제거(점, 들여쓰기) */
 }
 /* 제목(h2와 p) 사이즈 재정의 */
@@ -124,6 +91,18 @@ ul{
     display: inline-block;
     margin: 0;
 }
+
+#who-guide{
+    font-size: 0.75rem; /* 16px 브라우저 기준 12px 의미*/
+    display: inline;
+}
+
+#who-level-background-color{
+    background-color: rgb(30, 30, 30);
+    padding: 5px;
+    border-radius: 10px;
+}
+
 li{
     /* 각각의 프로필을 flex box로 구성 */
     display: flex;
@@ -133,6 +112,10 @@ li{
     margin-bottom: 1.25rem; /* 16 브라우저 기준 20px */
     margin-top: 0.625rem; /* 16 브라우저 기준 10px */
     align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    width: 24.5rem;
+    
 }
 li > img{
     /* 프로필사진 사이즈 조절 */
@@ -201,7 +184,7 @@ aside {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #6F946E;
     border: none;
   }
   

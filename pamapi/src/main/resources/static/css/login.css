@@ -1,13 +1,18 @@
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* 부모 요소의 높이를 화면 전체 높이로 설정 */
+}
+
 .Login-section {
   text-align: center;
-  margin: auto;
-  margin-top: 30px;
   border: 7px solid none;
-  border-radius: 15px;
   width: 360px;
   height: 600px;
   padding: 30px 25px;
-  background: padding-box #c4dfff;
+  background: padding-box;
+  background-color: #CBE3CE;
 }
 
 #logo {
@@ -52,9 +57,11 @@
   margin: 20px 0 10px 0;
   font-size: 22px;
   width: 240px;
-  background-color: #ffffff;
+  background-color: #001eff;
   border: none;
   height: 50px;
+  color: #ffffff; 
+  border-radius: 5px;
 }
 @font-face {
   font-family: 'Cafe24Ssurround';
