@@ -12,6 +12,5 @@ public class Sms_historyDTO {
 	private String u_Id;
 	private String c_Phone;
 	private String sms_Type;
-	private String sms_Contents;
 	private Timestamp sms_Time;
 }

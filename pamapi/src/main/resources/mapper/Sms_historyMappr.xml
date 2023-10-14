@@ -5,8 +5,8 @@
 
     <!-- Insert -->
 	<insert id="insertSms_history" parameterType="team.chichi.pamback.contacts.Sms_historyDTO">
-	    INSERT INTO SMS_HISTORY (sms_Seq, sms_Id, u_Id, c_Phone, sms_Type, sms_Contents, sms_Time)
-	    VALUES (#{sms_Seq}, #{sms_Id}, #{u_Id}, #{c_Phone}, #{sms_Type}, #{sms_Contents}, #{sms_Time})
+	    INSERT INTO SMS_HISTORY (sms_Seq, sms_Id, u_Id, c_Phone, sms_Type, sms_Time)
+	    VALUES (#{sms_Seq}, #{sms_Id}, #{u_Id}, #{c_Phone}, #{sms_Type}, #{sms_Time})
 	</insert>
 
     <!-- Select -->
@@ -22,7 +22,6 @@
     <update id="updateSms_history" parameterType="team.chichi.pamback.contacts.Sms_historyDTO">
 	    UPDATE SMS_HISTORY
 	    SET sms_Type = #{sms_Type},
-	        sms_Contents = #{sms_Contents},
 	        sms_Time = #{sms_Time}
 	    WHERE sms_Seq = #{sms_Seq}
 	         AND c_Phone = #{c_Phone} 

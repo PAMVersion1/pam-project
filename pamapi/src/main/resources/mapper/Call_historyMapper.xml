@@ -7,8 +7,8 @@
 
     <!-- Insert -->
     <insert id="insertCall_history" parameterType="team.chichi.pamback.contacts.Call_historyDTO">
-        INSERT INTO CALL_HISTORY (call_Seq, call_Id, u_Id, c_Phone, call_Type, call_Time, call_Duration)
-        VALUES (#{call_Seq}, #{call_Id}, #{u_Id}, #{c_Phone}, #{call_Type}, #{call_Time}, #{call_Duration})
+        INSERT INTO CALL_HISTORY (call_Id, u_Id, c_Phone, call_Type, call_Time, call_Duration)
+        VALUES (#{call_Id}, #{u_Id}, #{c_Phone}, #{call_Type}, #{call_Time}, #{call_Duration})
     </insert>
 
     <!-- Select -->
@@ -26,7 +26,7 @@
 	    SET call_Type = #{call_Type},
 	        call_Time = #{call_Time},
 	        call_Duration = #{call_Duration}
-	    WHERE call_Seq = #{call_Seq}
+	    WHERE call_Id = #{call_Id}
 	         AND c_Phone = #{c_Phone} 
 	         AND u_Id = #{u_Id}
 	    </update>
@@ -34,8 +34,7 @@
     <!-- Delete -->
     <delete id="deleteCall_history" parameterType="java.util.Map">
         DELETE FROM CALL_HISTORY 
-        WHERE call_Seq = #{call_Seq}
-        	AND call_Id = #{call_Id}
+        WHERE call_Id = #{call_Id}
 	        AND c_Phone = #{c_Phone} 
 	        AND u_Id = #{u_Id}
     </delete>
