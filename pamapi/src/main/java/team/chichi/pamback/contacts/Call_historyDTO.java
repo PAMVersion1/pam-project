@@ -7,7 +7,6 @@ import lombok.Data;
 @Data
 public class Call_historyDTO {
 
-	private int call_Seq;
 	private int call_Id;
 	private String u_Id;
 	private String c_Phone;

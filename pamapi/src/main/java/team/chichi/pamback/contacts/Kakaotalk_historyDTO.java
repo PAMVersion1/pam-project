@@ -11,6 +11,5 @@ public class Kakaotalk_historyDTO {
 	private String u_Id;
 	private String c_Phone;
 	private String kakaotalk_Type;
-	private String kakaotalk_Contents;
 	private Timestamp kakaotalk_Time;
 }
