@@ -12,5 +12,5 @@ public class Call_historyDTO {
 	private String c_Phone;
 	private String call_Type;
 	private Timestamp call_Time;
-	private String call_Duration;
+	private int call_Duration;
 }

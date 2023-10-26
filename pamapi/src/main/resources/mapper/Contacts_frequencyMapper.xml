@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="team.chichi.pamback.Contacts_frequencyDAO">
+
+    <!-- Insert -->
+    <insert id="insertContactsFrequency" parameterType="team.chichi.Contacts_frequencyDTO">
+        INSERT INTO contacts_frequency (u_Id, c_Phone, call_count, call_Duration_count, sms_count, kakaotalk_count, last_time)
+        VALUES (#{u_Id}, #{c_Phone}, #{call_count}, #{call_Duration_count}, #{sms_count}, #{kakaotalk_count}, #{last_time})
+    </insert>
+
+    <!-- Select all -->
+    <select id="getContactsFrequencyByPhoneAndUserId" parameterType="map" resultType="team.chichi.pamback.Contacts_frequencyDTO">
+        SELECT * FROM contacts_frequency WHERE c_Phone = #{c_Phone} AND u_Id = #{u_Id}
+    </select>
+    
+    <!-- Select  -->
+    <select id="getContactsFrequencyByUserId" parameterType="map" resultType="team.chichi.pamback.Contacts_frequencyDTO">
+        SELECT * FROM contacts_frequency WHERE u_Id = #{u_Id}
+    </select>    
+    
+
+    <!-- Update -->
+    <update id="updateContactsFrequency" parameterType="team.chichi.pamback.Contacts_frequencyDTO">
+        UPDATE contacts_frequency
+        SET call_count = #{call_count},
+            call_Duration_count = #{call_Duration_count},
+            sms_count = #{sms_count},
+            kakaotalk_count = #{kakaotalk_count},
+            last_time = #{last_time}
+        WHERE c_Phone = #{c_Phone} AND u_Id = #{u_Id}
+    </update>
+
+
+    <!-- Delete -->
+    <delete id="deleteContactsFrequency" parameterType="map">
+        DELETE FROM contacts_frequency WHERE c_Phone = #{c_Phone} AND u_Id = #{u_Id}
+    </delete>
+
+</mapper>
